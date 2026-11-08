@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Setup guide for Cut & Pack | Cartwright</title>
+	<meta name="description" content="How to install Cut & Pack and set up products sold in packs or cut to size.">
+	<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32">
+	<link rel="preload" href="../assets/fonts/archivo.woff" as="font" type="font/woff" crossorigin>
+	<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="wrap">
+			<a class="brand" href="../"><img src="../assets/img/icon-128x128.png" alt="" width="28" height="28">Cartwright</a>
+			<nav class="site-nav" aria-label="Main">
+				<a href="../">Cut &amp; Pack</a>
+				<a href="../docs/" aria-current="page">Setup guide</a>
+				<a href="../contact/">Contact</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="page">
+		<div class="wrap">
+			<article class="prose">
+				<h1>Setting up Cut &amp; Pack</h1>
+				<p class="lead">From installing the plugin to your first made-to-measure product, in about five minutes.</p>
+
+				<h2>Before you start</h2>
+				<ul>
+					<li>WordPress 6.9 or newer, with WooCommerce 10.0 or newer</li>
+					<li>A <strong>simple product</strong> to sell by area or length. Variable products are planned.</li>
+				</ul>
+
+				<h2>Install the plugin</h2>
+				<ol>
+					<li>In your WordPress admin, go to <strong>Plugins → Add New</strong>.</li>
+					<li>Search for <strong>Cut &amp; Pack</strong>.</li>
+					<li>Click <strong>Install Now</strong>, then <strong>Activate</strong>.</li>
+				</ol>
+
+				<h2>Set up a product sold in packs</h2>
+				<p>For tiles, laminate and anything else sold in boxes.</p>
+				<ol>
+					<li>Edit the product. On the <strong>General</strong> tab, set the <strong>Regular price</strong> to the price per m², for example <code>39.90</code>.</li>
+					<li>Open the <strong>Made to measure</strong> tab and tick <strong>Enable calculator</strong>.</li>
+					<li>Set <strong>Mode</strong> to <strong>Sold in packs</strong> and <strong>Sold by</strong> to <strong>Area (m²)</strong>.</li>
+					<li>Choose what customers enter: the <strong>Total area</strong>, or <strong>Length × width</strong>.</li>
+					<li>Enter the <strong>Coverage per pack</strong>, the area one box covers, for example <code>1.44</code>.</li>
+					<li>Optionally, set a <strong>Minimum</strong> and <strong>Maximum</strong> area, and your own <strong>Label text</strong>.</li>
+					<li>Click <strong>Update</strong> and view the product in your shop.</li>
+				</ol>
+				<p>If you track stock, enter it in <strong>boxes</strong> on the Inventory tab.</p>
+
+				<h2>Set up a product cut to size</h2>
+				<p>For fabric, blinds, rope and other products sold by exact length or area.</p>
+				<ol>
+					<li>Set the <strong>Regular price</strong> to the price per metre (or per m²).</li>
+					<li>On the <strong>Made to measure</strong> tab, tick <strong>Enable calculator</strong> and set <strong>Mode</strong> to <strong>Cut to size</strong>.</li>
+					<li>Set <strong>Sold by</strong> to <strong>Length (m)</strong> or <strong>Area (m²)</strong>.</li>
+					<li>Enter a <strong>Step</strong>, the smallest amount you cut, for example <code>0.1</code> for 10 cm. Amounts are rounded up to it.</li>
+					<li>Click <strong>Update</strong>.</li>
+				</ol>
+
+				<h2>Common questions</h2>
+				<h3>How is the price of a box worked out?</h3>
+				<p>Coverage per box × price per m², rounded to whole pennies. For example, 1.44 m² × £39.90 = £57.46 per box. The total is the number of boxes × £57.46, so the numbers always add up.</p>
+				<h3>Can customers change the number of boxes in the cart?</h3>
+				<p>Yes. The area shown in the cart updates to match.</p>
+				<h3>The calculator was switched off when I saved. Why?</h3>
+				<p>A setting it needs is missing: usually the <strong>Coverage per pack</strong> or the <strong>Regular price</strong>, or the minimum is larger than the maximum. The message at the top of the screen says which.</p>
+				<h3>Does it work with the block checkout?</h3>
+				<p>Yes, with both the block-based cart and checkout and the classic ones.</p>
+				<h3>What happens to my settings if I delete the plugin?</h3>
+				<p>They are kept, unless you tick <strong>Remove data on uninstall</strong> under <strong>WooCommerce → Settings → Products</strong>. Sizes stored on past orders are always kept.</p>
+
+				<h2>Need help?</h2>
+				<p><a href="../contact/">Contact us</a> and we'll reply as soon as we can.</p>
+			</article>
+		</div>
+	</main>
+
+	<footer class="site-footer">
+		<div class="wrap">
+			<p>© 2026 Cartwright. Not affiliated with WooCommerce or Automattic.</p>
+			<nav aria-label="Footer">
+				<a href="../docs/">Setup guide</a>
+				<a href="../contact/">Contact</a>
+				<a href="../privacy/">Privacy</a>
+			</nav>
+		</div>
+	</footer>
+</body>
+</html>

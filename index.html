@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cut &amp; Pack – made-to-measure pricing for WooCommerce | Cartwright</title>
+	<meta name="description" content="Cut & Pack is a free WooCommerce plugin for tile, flooring and fabric shops. Shoppers enter the area or length they need, and it works out the boxes and the price.">
+	<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+	<link rel="preload" href="assets/fonts/archivo.woff" as="font" type="font/woff" crossorigin>
+	<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="wrap">
+			<a class="brand" href="./"><img src="assets/img/icon-128x128.png" alt="" width="28" height="28">Cartwright</a>
+			<nav class="site-nav" aria-label="Main">
+				<a href="./" aria-current="page">Cut &amp; Pack</a>
+				<a href="docs/">Setup guide</a>
+				<a href="contact/">Contact</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="wrap">
+				<div>
+					<h1>Sell flooring by the square metre. Ship it by the box.</h1>
+					<p class="lead">Cut &amp; Pack is a free WooCommerce plugin. Your customers type in the area they need, and it tells them how many boxes to buy and what it costs, before they reach the cart.</p>
+					<div class="actions">
+						<span class="btn" aria-disabled="true">Coming soon to WordPress.org</span>
+						<a class="btn btn-quiet" href="docs/">Read the setup guide</a>
+					</div>
+					<p class="note" style="margin-top:12px">Cut &amp; Pack is being reviewed by the WordPress.org team. It will be free to download once approved.</p>
+				</div>
+
+				<div class="demo" id="demo">
+					<div class="demo-head">
+						<span><strong>Try it:</strong> Oak laminate</span>
+						<span>£39.90 per m², boxes of 1.44 m²</span>
+					</div>
+					<label for="demo-area">How many m² do you need?</label>
+					<div class="demo-input">
+						<input id="demo-area" type="text" inputmode="decimal" autocomplete="off" value="23.5" aria-describedby="demo-result">
+						<span class="unit">m²</span>
+					</div>
+					<div class="boxes" id="demo-boxes" aria-hidden="true"></div>
+					<p class="boxes-key" id="demo-key"></p>
+					<p class="result" id="demo-result" aria-live="polite"></p>
+					<p class="demo-error" id="demo-error" role="alert" hidden></p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="how">
+			<div class="wrap">
+				<div class="section-intro">
+					<h2>How it works</h2>
+					<p>No more customers guessing how many boxes to order, or emailing to ask.</p>
+				</div>
+				<ol class="steps">
+					<li>
+						<h3>You set the box size</h3>
+						<p>On each product, enter the price per m² and how much one box covers, for example 1.44 m².</p>
+					</li>
+					<li>
+						<h3>Your customer enters the area</h3>
+						<p>They type 23.5 m², or the length and width of the room. The price updates as they type.</p>
+					</li>
+					<li>
+						<h3>The cart gets whole boxes</h3>
+						<p>17 boxes go into the cart, with the area shown on the order and in the emails, so you know exactly what to pack.</p>
+					</li>
+				</ol>
+			</div>
+		</section>
+
+		<section class="section" id="modes">
+			<div class="wrap">
+				<div class="section-intro">
+					<h2>Two ways to sell</h2>
+				</div>
+				<div class="modes">
+					<div class="mode">
+						<h3>Sold in packs</h3>
+						<p class="for">Tiles, laminate, wood and vinyl flooring, wallpaper, insulation</p>
+						<p>The area is rounded up to whole boxes, so customers always get at least what they asked for. An exact fit is never rounded up, and stock is counted in boxes.</p>
+						<p class="example">23.5 m² with 1.44 m² boxes: 17 boxes, £976.82</p>
+					</div>
+					<div class="mode">
+						<h3>Cut to size</h3>
+						<p class="for">Fabric, curtains, blinds, rope, cable, turf</p>
+						<p>The customer pays for the exact length or area, rounded up to the step you choose, such as 10 cm.</p>
+						<p class="example">2.34 m of fabric at £18.00 per metre: 2.4 m, £43.20</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="features">
+			<div class="wrap">
+				<div class="section-intro">
+					<h2>What's included</h2>
+					<p>Everything below is in the free plugin.</p>
+				</div>
+				<ul class="features">
+					<li>Price per m² or per metre, using the product's normal price</li>
+					<li>Customers enter a total area, or length × width</li>
+					<li>Rounds up to whole boxes, with stock counted in boxes</li>
+					<li>Live price on the product page</li>
+					<li>Minimum, maximum and step sizes, with clear messages</li>
+					<li>Sizes shown in the cart, checkout, order screen and emails</li>
+					<li>Works with the new block checkout and the classic one</li>
+					<li>Prices are always recalculated by your shop, never taken from the browser</li>
+					<li>Loads only on products that use it</li>
+					<li>No tracking, no external services</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="section" id="screenshots">
+			<div class="wrap">
+				<div class="section-intro">
+					<h2>See it in a shop</h2>
+				</div>
+				<div class="shots">
+					<figure class="shot">
+						<img src="assets/img/screenshot-2.png" width="1800" height="456" alt="Cart showing Oak Laminate, 17 boxes at £57.46, with the line Coverage: 24.48 m² (17 boxes), You entered: 23.5 m². Total £976.82.">
+						<figcaption>The size travels with the order, from cart to email.</figcaption>
+					</figure>
+					<figure class="shot">
+						<img src="assets/img/screenshot-3.png" width="1291" height="735" alt="The Made to measure tab on the WooCommerce product edit screen, with settings for mode, unit, coverage per pack, minimum and maximum.">
+						<figcaption>Settings live on each product, in a "Made to measure" tab.</figcaption>
+					</figure>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="about">
+			<div class="wrap">
+				<h2>About Cartwright</h2>
+				<p>Cartwright makes small, focused plugins for WooCommerce shops that sell things made to measure. Cut &amp; Pack is our first. Questions or ideas? <a href="contact/">Get in touch</a>.</p>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="wrap">
+			<p>© 2026 Cartwright. Not affiliated with WooCommerce or Automattic.</p>
+			<nav aria-label="Footer">
+				<a href="docs/">Setup guide</a>
+				<a href="contact/">Contact</a>
+				<a href="privacy/">Privacy</a>
+			</nav>
+		</div>
+	</footer>
+
+	<script src="assets/demo.js" defer></script>
+</body>
+</html>
