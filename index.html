@@ -4,7 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Cut &amp; Pack – made-to-measure pricing for WooCommerce | Cartwright</title>
-	<meta name="description" content="Cut & Pack is a free WooCommerce plugin for tile, flooring and fabric shops. Shoppers enter the area or length they need, and it works out the boxes and the price.">
+	<meta name="description" content="Cut & Pack is a free WooCommerce plugin for tile, flooring and fabric shops. Customers enter the size they need; it works out the boxes and the price.">
+	<meta name="theme-color" content="#0d1322">
 	<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
 	<link rel="preload" href="assets/fonts/archivo.woff" as="font" type="font/woff" crossorigin>
 	<link rel="stylesheet" href="assets/site.css">
@@ -12,134 +13,249 @@
 <body>
 	<header class="site-header">
 		<div class="wrap">
-			<a class="brand" href="./"><img src="assets/img/icon-128x128.png" alt="" width="28" height="28">Cartwright</a>
+			<a class="brand" href="./"><img src="assets/img/icon-128x128.png" alt="" width="30" height="30">Cartwright</a>
 			<nav class="site-nav" aria-label="Main">
-				<a href="./" aria-current="page">Cut &amp; Pack</a>
-				<a href="docs/">Setup guide</a>
+				<a href="#see-it">How it looks</a>
+				<a href="#setup">Setup</a>
+				<a href="docs/">Guide</a>
 				<a href="contact/">Contact</a>
+				<a class="nav-cta" href="#get">Get Cut &amp; Pack</a>
 			</nav>
 		</div>
 	</header>
 
 	<main>
+		<!-- Hero with the room planner -->
 		<section class="hero">
 			<div class="wrap">
 				<div>
-					<h1>Sell flooring by the square metre. Ship it by the box.</h1>
-					<p class="lead">Cut &amp; Pack is a free WooCommerce plugin. Your customers type in the area they need, and it tells them how many boxes to buy and what it costs, before they reach the cart.</p>
+					<h1>Your customers measure the room. Cut &amp; Pack counts the boxes.</h1>
+					<p class="lead">A free WooCommerce plugin for flooring, tile and fabric shops. Shoppers enter the size they need and see exactly how many boxes to buy, and the price, before they add to cart.</p>
 					<div class="actions">
-						<span class="btn" aria-disabled="true">Coming soon to WordPress.org</span>
-						<a class="btn btn-quiet" href="docs/">Read the setup guide</a>
+						<span class="btn btn-pending" id="get"><span class="dot" aria-hidden="true"></span>Coming soon to WordPress.org</span>
+						<a class="btn btn-ghost" href="docs/">Read the setup guide</a>
 					</div>
-					<p class="note" style="margin-top:12px">Cut &amp; Pack is being reviewed by the WordPress.org team. It will be free to download once approved.</p>
+					<p class="hero-note">In review at WordPress.org. Free to download once approved.</p>
 				</div>
 
-				<div class="demo" id="demo">
-					<div class="demo-head">
-						<span><strong>Try it:</strong> Oak laminate</span>
-						<span>£39.90 per m², boxes of 1.44 m²</span>
+				<div class="planner" id="planner">
+					<div class="planner-top">
+						<div class="switch" role="group" aria-label="Product type">
+							<button type="button" data-mode="packs" aria-pressed="true">Flooring</button>
+							<button type="button" data-mode="cut" aria-pressed="false">Fabric</button>
+						</div>
+						<div class="planner-product" id="planner-product"></div>
 					</div>
-					<label for="demo-area">How many m² do you need?</label>
-					<div class="demo-input">
-						<input id="demo-area" type="text" inputmode="decimal" autocomplete="off" value="23.5" aria-describedby="demo-result">
-						<span class="unit">m²</span>
+
+					<div class="stage" id="stage">
+						<svg id="plan" viewBox="0 0 800 500" role="img" aria-labelledby="plan-title">
+							<title id="plan-title">Room plan that updates as you change the size</title>
+						</svg>
+						<span class="hint" id="hint">Drag the corner to resize the room</span>
 					</div>
-					<div class="boxes" id="demo-boxes" aria-hidden="true"></div>
-					<p class="boxes-key" id="demo-key"></p>
-					<p class="result" id="demo-result" aria-live="polite"></p>
-					<p class="demo-error" id="demo-error" role="alert" hidden></p>
+
+					<div class="fields" id="fields"></div>
+
+					<dl class="readout" id="readout"></dl>
+					<p class="planner-msg" id="planner-msg" aria-live="polite"></p>
 				</div>
 			</div>
 		</section>
 
-		<section class="section" id="how">
+		<!-- What the customer sees -->
+		<section class="band band-deep" id="see-it">
 			<div class="wrap">
-				<div class="section-intro">
-					<h2>How it works</h2>
-					<p>No more customers guessing how many boxes to order, or emailing to ask.</p>
+				<div class="band-head">
+					<h2>What your customers see</h2>
+					<p class="lead">The size they enter follows the order all the way through, so nothing gets lost between the website and the warehouse.</p>
 				</div>
-				<ol class="steps">
-					<li>
-						<h3>You set the box size</h3>
-						<p>On each product, enter the price per m² and how much one box covers, for example 1.44 m².</p>
-					</li>
-					<li>
-						<h3>Your customer enters the area</h3>
-						<p>They type 23.5 m², or the length and width of the room. The price updates as they type.</p>
-					</li>
-					<li>
-						<h3>The cart gets whole boxes</h3>
-						<p>17 boxes go into the cart, with the area shown on the order and in the emails, so you know exactly what to pack.</p>
-					</li>
-				</ol>
-			</div>
-		</section>
 
-		<section class="section" id="modes">
-			<div class="wrap">
-				<div class="section-intro">
-					<h2>Two ways to sell</h2>
-				</div>
-				<div class="modes">
-					<div class="mode">
-						<h3>Sold in packs</h3>
-						<p class="for">Tiles, laminate, wood and vinyl flooring, wallpaper, insulation</p>
-						<p>The area is rounded up to whole boxes, so customers always get at least what they asked for. An exact fit is never rounded up, and stock is counted in boxes.</p>
-						<p class="example">23.5 m² with 1.44 m² boxes: 17 boxes, £976.82</p>
+				<div class="tabs">
+					<div class="tablist" role="tablist" aria-label="Customer journey">
+						<button type="button" role="tab" id="tab-product" aria-controls="panel-product" aria-selected="true">
+							<strong>Product page</strong>
+							<span>They type the area and see boxes and price.</span>
+						</button>
+						<button type="button" role="tab" id="tab-cart" aria-controls="panel-cart" aria-selected="false" tabindex="-1">
+							<strong>Cart</strong>
+							<span>Whole boxes, with the area beside them.</span>
+						</button>
+						<button type="button" role="tab" id="tab-email" aria-controls="panel-email" aria-selected="false" tabindex="-1">
+							<strong>Order email</strong>
+							<span>You know exactly what to pack.</span>
+						</button>
 					</div>
-					<div class="mode">
-						<h3>Cut to size</h3>
-						<p class="for">Fabric, curtains, blinds, rope, cable, turf</p>
-						<p>The customer pays for the exact length or area, rounded up to the step you choose, such as 10 cm.</p>
-						<p class="example">2.34 m of fabric at £18.00 per metre: 2.4 m, £43.20</p>
+
+					<div>
+						<div class="screen" role="tabpanel" id="panel-product" aria-labelledby="tab-product">
+							<div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">yourshop.co.uk/oak-laminate</span></div>
+							<div class="screen-body">
+								<div class="mock-product">
+									<div class="mock-photo" role="img" aria-label="Oak laminate planks"></div>
+									<div>
+										<p class="mock-title">Oak Laminate</p>
+										<p class="mock-price">£39.90 / m²</p>
+										<div class="mock-calc">
+											<div class="q">How many m² do you need?</div>
+											<div class="mock-input"><span class="box"><span id="type-target">23.5</span><span class="caret" aria-hidden="true"></span></span> m²</div>
+											<p class="mock-result" id="type-result">You need 17 boxes (24.48 m²) – £976.82</p>
+										</div>
+										<span class="mock-btn">Add to cart</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="screen" role="tabpanel" id="panel-cart" aria-labelledby="tab-cart" hidden>
+							<div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">yourshop.co.uk/cart</span></div>
+							<div class="screen-body">
+								<table class="mock-table">
+									<thead><tr><th>Product</th><th>Qty</th><th class="num">Total</th></tr></thead>
+									<tbody>
+										<tr>
+											<td>Oak Laminate <span class="mock-meta"><b>Coverage:</b> 24.48 m² (17 boxes)</span><span class="mock-meta"><b>You entered:</b> 23.5 m²</span></td>
+											<td>17</td>
+											<td class="num">£976.82</td>
+										</tr>
+										<tr>
+											<td>Linen Fabric <span class="mock-meta"><b>Length:</b> 2.4 m</span><span class="mock-meta"><b>You entered:</b> 2.34 m</span></td>
+											<td>1</td>
+											<td class="num">£43.20</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="mock-total"><span>Total</span><span>£1,020.02</span></div>
+							</div>
+						</div>
+
+						<div class="screen" role="tabpanel" id="panel-email" aria-labelledby="tab-email" hidden>
+							<div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">Inbox</span></div>
+							<div class="screen-body">
+								<div class="mock-mail">
+									<p class="from">From: Your Shop · To: you</p>
+									<h4>New order #1042 <span class="tag-ok">Paid</span></h4>
+									<table class="mock-table">
+										<tbody>
+											<tr>
+												<td>Oak Laminate × 17 <span class="mock-meta"><b>Coverage:</b> 24.48 m² (17 boxes)</span><span class="mock-meta"><b>You entered:</b> 23.5 m²</span></td>
+												<td class="num">£976.82</td>
+											</tr>
+											<tr>
+												<td>Linen Fabric × 1 <span class="mock-meta"><b>Length:</b> 2.4 m</span></td>
+												<td class="num">£43.20</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="section" id="features">
+		<!-- Setup demo -->
+		<section class="band" id="setup">
 			<div class="wrap">
-				<div class="section-intro">
-					<h2>What's included</h2>
-					<p>Everything below is in the free plugin.</p>
+				<div class="band-head">
+					<h2>Set up a product in under a minute</h2>
+					<p class="lead">Each product gets a "Made to measure" tab with a handful of settings. Try them: the shop preview updates as you type.</p>
 				</div>
-				<ul class="features">
-					<li>Price per m² or per metre, using the product's normal price</li>
-					<li>Customers enter a total area, or length × width</li>
-					<li>Rounds up to whole boxes, with stock counted in boxes</li>
-					<li>Live price on the product page</li>
-					<li>Minimum, maximum and step sizes, with clear messages</li>
-					<li>Sizes shown in the cart, checkout, order screen and emails</li>
-					<li>Works with the new block checkout and the classic one</li>
-					<li>Prices are always recalculated by your shop, never taken from the browser</li>
-					<li>Loads only on products that use it</li>
-					<li>No tracking, no external services</li>
-				</ul>
+
+				<div class="setup">
+					<div class="admin" id="setup-demo">
+						<div class="admin-head">Made to measure <span class="pill">Cut &amp; Pack</span></div>
+						<div class="admin-body">
+							<label class="toggle"><input type="checkbox" id="s-enabled" checked> Enable calculator</label>
+							<div class="seg" role="group" aria-label="Mode">
+								<button type="button" data-smode="packs" aria-pressed="true">Sold in packs<small>Tiles, flooring</small></button>
+								<button type="button" data-smode="cut" aria-pressed="false">Cut to size<small>Fabric, blinds</small></button>
+							</div>
+							<div class="fields" style="margin-top:0">
+								<div class="field">
+									<label for="s-price" id="s-price-label">Price per m²</label>
+									<div class="in"><span class="u">£</span><input id="s-price" inputmode="decimal" value="39.90"></div>
+								</div>
+								<div class="field">
+									<label for="s-size" id="s-size-label">Coverage per box</label>
+									<div class="in"><input id="s-size" inputmode="decimal" value="1.44"><span class="u" id="s-size-unit">m²</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<p class="preview-label">Your shop, for a customer who needs <span id="s-example">23.5 m²</span>:</p>
+						<div class="screen">
+							<div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">yourshop.co.uk/product</span></div>
+							<div class="screen-body">
+								<p class="mock-title" id="p-name">Oak Laminate</p>
+								<p class="mock-price" id="p-price">£39.90 / m²</p>
+								<div class="mock-calc">
+									<div class="q" id="p-q">How many m² do you need?</div>
+									<div class="mock-input"><span class="box" id="p-entered">23.5</span> <span id="p-unit">m²</span></div>
+									<p class="mock-result" id="p-result" aria-live="polite"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
-		<section class="section" id="screenshots">
+		<!-- Features -->
+		<section class="band band-deep" id="features">
 			<div class="wrap">
-				<div class="section-intro">
-					<h2>See it in a shop</h2>
+				<div class="band-head">
+					<h2>Built for real shops</h2>
 				</div>
-				<div class="shots">
-					<figure class="shot">
-						<img src="assets/img/screenshot-2.png" width="1800" height="456" alt="Cart showing Oak Laminate, 17 boxes at £57.46, with the line Coverage: 24.48 m² (17 boxes), You entered: 23.5 m². Total £976.82.">
-						<figcaption>The size travels with the order, from cart to email.</figcaption>
-					</figure>
-					<figure class="shot">
-						<img src="assets/img/screenshot-3.png" width="1291" height="735" alt="The Made to measure tab on the WooCommerce product edit screen, with settings for mode, unit, coverage per pack, minimum and maximum.">
-						<figcaption>Settings live on each product, in a "Made to measure" tab.</figcaption>
-					</figure>
+				<div class="grid-3">
+					<div class="tile">
+						<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="15" width="12" height="12" rx="2"/><rect x="17" y="15" width="12" height="12" rx="2"/><rect x="10" y="3" width="12" height="11" rx="2"/></svg>
+						<h3>Whole boxes, always</h3>
+						<p>Rounds up so customers get at least what they need. An exact fit is never rounded up, and stock is counted in boxes.</p>
+					</div>
+					<div class="tile">
+						<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 3l11 5v7c0 7-5 12-11 14C10 27 5 22 5 15V8z"/><path d="M11 16l4 4 7-8"/></svg>
+						<h3>Prices you can trust</h3>
+						<p>Your shop recalculates every price itself. Nobody can change it in their browser to pay less.</p>
+					</div>
+					<div class="tile">
+						<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="6" width="24" height="20" rx="3"/><path d="M4 12h24M10 18h6M10 22h10"/></svg>
+						<h3>Any checkout</h3>
+						<p>Works with WooCommerce's new block checkout and the classic one, on desktop and mobile.</p>
+					</div>
+					<div class="tile">
+						<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 26h24M7 26V12M13 26V6M19 26v-9M25 26V9"/></svg>
+						<h3>Min, max and steps</h3>
+						<p>Set the smallest and largest order, and cutting steps like 10 cm, with clear messages for customers.</p>
+					</div>
+					<div class="tile">
+						<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="16" cy="16" r="12"/><path d="M8 24L24 8"/></svg>
+						<h3>No tracking</h3>
+						<p>No external services and no data collected. It runs entirely on your own website.</p>
+					</div>
+					<div class="tile">
+						<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 3L7 18h8l-1 11 11-15h-8z"/></svg>
+						<h3>Lightweight</h3>
+						<p>Loads only on products that use it, so the rest of your shop stays as fast as it is today.</p>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="section" id="about">
+		<!-- Call to action -->
+		<section class="band">
 			<div class="wrap">
-				<h2>About Cartwright</h2>
-				<p>Cartwright makes small, focused plugins for WooCommerce shops that sell things made to measure. Cut &amp; Pack is our first. Questions or ideas? <a href="contact/">Get in touch</a>.</p>
+				<div class="cta">
+					<div>
+						<h2>Free for every WooCommerce shop</h2>
+						<p>Cut &amp; Pack is in review at WordPress.org. Questions before then? Write to <a href="mailto:hello@cartwrightplugins.com">hello@cartwrightplugins.com</a>.</p>
+					</div>
+					<div class="actions" style="margin-top:0">
+						<a class="btn btn-primary" href="docs/">See how setup works</a>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
@@ -155,6 +271,6 @@
 		</div>
 	</footer>
 
-	<script src="assets/demo.js" defer></script>
+	<script src="assets/app.js" defer></script>
 </body>
 </html>
