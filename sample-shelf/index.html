@@ -8,16 +8,21 @@
 	<meta name="theme-color" content="#0d1322">
 	<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32">
 	<link rel="preload" href="../assets/fonts/archivo.woff" as="font" type="font/woff" crossorigin>
-	<link rel="stylesheet" href="../assets/site.css?v=2">
+	<link rel="stylesheet" href="../assets/site.css?v=3">
 </head>
 <body>
 	<header class="site-header">
 		<div class="wrap">
 			<a class="brand" href="../"><img src="../assets/img/icon-128x128.png" alt="" width="30" height="30">Cartwright</a>
 			<nav class="site-nav" aria-label="Main">
-				<a href="../#see-it">Cut &amp; Pack</a>
+				<details class="menu">
+					<summary>Plugins</summary>
+					<div class="menu-panel">
+						<a href="../cut-and-pack/"><strong>Cut &amp; Pack <span class="badge badge-live">Live</span></strong><span>Made-to-measure pricing: boxes, cut lengths, areas</span></a>
+						<a href="../sample-shelf/" aria-current="page"><strong>Sample Shelf <span class="badge badge-soon">Soon</span></strong><span>Free samples shoppers can order before they buy</span></a>
+					</div>
+				</details>
 				<a href="../docs/">Guide</a>
-				<a href="./" aria-current="page">Sample Shelf</a>
 				<a href="../contact/">Contact</a>
 			</nav>
 		</div>
@@ -47,7 +52,7 @@
 				<p>Your shop decides the price, the limit and whether a product is eligible. Nothing a shopper changes in their browser can alter them. Sample Shelf collects no data and talks to no outside services.</p>
 
 				<h2>Works with Cut &amp; Pack</h2>
-				<p>Selling tile or flooring by the square metre? With <a href="../">Cut &amp; Pack</a> 1.2 or newer, shoppers can order a sample without entering a room size, and the full order still works as before.</p>
+				<p>Selling tile or flooring by the square metre? With <a href="../cut-and-pack/">Cut &amp; Pack</a> 1.2 or newer, shoppers can order a sample without entering a room size, and the full order still works as before.</p>
 
 				<h2>Questions</h2>
 				<p>Write to <a href="mailto:hello@cartwrightplugins.com">hello@cartwrightplugins.com</a>.</p>
@@ -57,14 +62,26 @@
 
 	<footer class="site-footer">
 		<div class="wrap">
+			<div class="foot-cols">
+				<div>
+					<h4>Plugins</h4>
+					<a href="../cut-and-pack/">Cut &amp; Pack</a>
+					<a href="../sample-shelf/">Sample Shelf</a>
+				</div>
+				<div>
+					<h4>Resources</h4>
+					<a href="../docs/">Cut &amp; Pack setup guide</a>
+					<a href="../privacy/">Privacy</a>
+				</div>
+				<div>
+					<h4>Get in touch</h4>
+					<a href="../contact/">Contact</a>
+					<a href="https://wordpress.org/plugins/cut-and-pack-for-woocommerce/">Cut &amp; Pack on WordPress.org</a>
+				</div>
+			</div>
 			<p>© 2026 Cartwright. Not affiliated with WooCommerce or Automattic.</p>
-			<nav aria-label="Footer">
-				<a href="../docs/">Setup guide</a>
-				<a href="./">Sample Shelf</a>
-				<a href="../contact/">Contact</a>
-				<a href="../privacy/">Privacy</a>
-			</nav>
 		</div>
 	</footer>
+	<script src="../assets/nav.js" defer></script>
 </body>
 </html>
