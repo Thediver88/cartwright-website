@@ -8,7 +8,7 @@
 	<meta name="theme-color" content="#0d1322">
 	<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32">
 	<link rel="preload" href="../assets/fonts/archivo.woff" as="font" type="font/woff" crossorigin>
-	<link rel="stylesheet" href="../assets/site.css?v=3">
+	<link rel="stylesheet" href="../assets/site.css?v=4">
 </head>
 <body>
 	<header class="site-header">
@@ -28,14 +28,98 @@
 		</div>
 	</header>
 
-	<main class="page">
-		<div class="wrap">
+	<main>
+		<section class="hero">
+			<div class="wrap">
+				<div>
+					<h1>Let shoppers order a sample before they commit.</h1>
+					<p class="lead">A free WooCommerce plugin for flooring, tile and fabric shops. Shoppers ask for a sample of a product, the sample is clearly labelled everywhere, and the full order stays separate.</p>
+					<div class="actions">
+						<a class="btn btn-primary" href="https://wordpress.org/plugins/sample-shelf-for-woocommerce/">Get it on WordPress.org</a>
+						<a class="btn btn-ghost" href="../cut-and-pack/">Works with Cut &amp; Pack</a>
+					</div>
+					<p class="hero-note">Free. Install it from Plugins → Add New in your WordPress admin.</p>
+				</div>
+
+				<div class="planner" id="sampledemo">
+					<div class="planner-top">
+						<div class="planner-product"><strong>Oak Herringbone</strong> · £42.00 / m²</div>
+					</div>
+					<div class="swatches" role="group" aria-label="Finish"></div>
+					<p class="sample-name">Finish: <b></b></p>
+					<div class="sample-actions">
+						<button type="button" class="btn btn-primary" data-act="request">Request a sample · free</button>
+						<button type="button" class="btn btn-ghost" data-act="reset">Clear</button>
+					</div>
+					<ul class="sample-list" aria-label="Samples in the cart"></ul>
+					<dl class="readout">
+						<div><dt>Samples</dt><dd data-out="count">0 of 5</dd></div>
+						<div><dt>Per sample</dt><dd data-out="cost">Free</dd></div>
+						<div class="total"><dt>Stock used</dt><dd>None</dd></div>
+					</dl>
+					<p class="planner-msg" aria-live="polite">Pick a finish, then request a sample. Try to add more than five.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="band band-deep">
+			<div class="wrap">
+				<div class="band-head">
+					<h2>What your customers see</h2>
+					<p class="lead">The sample is labelled on the product page, in the cart, and in the order email, so nobody mixes it up with the full-size order.</p>
+				</div>
+				<div class="sample-screens">
+					<figure>
+						<figcaption><strong>Product page</strong><span>A sample button next to Add to cart.</span></figcaption>
+						<div class="screen">
+							<div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">yourshop.co.uk/oak-herringbone</span></div>
+							<div class="screen-body">
+								<p class="mock-title">Oak Herringbone</p>
+								<p class="mock-price">£42.00 / m²</p>
+								<div class="mock-swatches" aria-hidden="true"><i class="on" style="--sw:#d6a565"></i><i style="--sw:#6f4e37"></i><i style="--sw:#9aa0a6"></i><i style="--sw:#e8dfd0"></i></div>
+								<span class="mock-btn">Add to cart</span><span class="mock-btn alt">Request a sample</span>
+							</div>
+						</div>
+					</figure>
+					<figure>
+						<figcaption><strong>Cart</strong><span>Clearly marked, free, separate from the order.</span></figcaption>
+						<div class="screen">
+							<div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">yourshop.co.uk/cart</span></div>
+							<div class="screen-body">
+								<table class="mock-table">
+									<thead><tr><th>Product</th><th>Qty</th><th class="num">Total</th></tr></thead>
+									<tbody>
+										<tr><td>Oak Herringbone <span class="tag-sample">Sample</span><span class="mock-meta"><b>Finish:</b> Natural oak</span></td><td>1</td><td class="num">Free</td></tr>
+										<tr><td>Oak Herringbone <span class="tag-sample">Sample</span><span class="mock-meta"><b>Finish:</b> Grey wash</span></td><td>1</td><td class="num">Free</td></tr>
+									</tbody>
+								</table>
+								<p class="mock-note">2 of 5 samples used. Samples do not count against your stock.</p>
+							</div>
+						</div>
+					</figure>
+					<figure>
+						<figcaption><strong>Order email</strong><span>You know what to put in the envelope.</span></figcaption>
+						<div class="screen">
+						<div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">New order</span></div>
+							<div class="screen-body">
+								<div class="mock-mail">
+									<div class="from">From: yourshop · To: you</div>
+									<h4>New order #1042</h4>
+									<table class="mock-table"><tbody>
+										<tr><td>Oak Herringbone <span class="tag-sample">Sample</span><span class="mock-meta"><b>Finish:</b> Natural oak</span></td><td class="num">× 1</td></tr>
+										<tr><td>Oak Herringbone <span class="tag-sample">Sample</span><span class="mock-meta"><b>Finish:</b> Grey wash</span></td><td class="num">× 1</td></tr>
+									</tbody></table>
+								</div>
+							</div>
+						</div>
+					</figure>
+				</div>
+			</div>
+		</section>
+
+		<section class="page">
+			<div class="wrap">
 			<article class="prose">
-				<h1>Sample Shelf</h1>
-				<p class="lead">A free WooCommerce plugin for flooring, tile and fabric shops. Shoppers ask for a sample of a product before they commit to the full order.</p>
-
-				<p><a class="btn btn-primary" href="https://wordpress.org/plugins/sample-shelf-for-woocommerce/">Get it on WordPress.org</a></p>
-
 				<h2>What it does</h2>
 				<ul>
 					<li>Adds a “Request a sample” button next to Add to cart, on the products you choose.</li>
@@ -55,7 +139,8 @@
 				<h2>Questions</h2>
 				<p>Write to <a href="mailto:hello@cartwrightplugins.com">hello@cartwrightplugins.com</a>.</p>
 			</article>
-		</div>
+			</div>
+		</section>
 	</main>
 
 	<footer class="site-footer">
@@ -81,5 +166,6 @@
 		</div>
 	</footer>
 	<script src="../assets/nav.js" defer></script>
+	<script src="../assets/sample.js" defer></script>
 </body>
 </html>
